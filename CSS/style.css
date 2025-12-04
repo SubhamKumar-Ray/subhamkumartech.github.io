@@ -747,7 +747,7 @@ ul.dropdown li:hover .dropdown1 {
     }
 }
 /* ========== DESKTOP VIEW ONLY (min-width: 769px) ========== */
-@media (min-width: 769px) {
+/*@media (min-width: 769px) {
 
   .logo {
     display: flex;
@@ -769,7 +769,8 @@ ul.dropdown li:hover .dropdown1 {
     padding: 15px 50px;   /* Desktop spacing */
   }
 
-}
+}*/
+
 
 
 
