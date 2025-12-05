@@ -760,7 +760,7 @@ ul.dropdown li:hover .dropdown1 {
   }
 
   .logo-img {
-    height: 70px;         /* Logo bada & clear */
+    height: 48px;         /* Logo bada & clear */
     width: auto;          /* Distortion nahi hoga */
     object-fit: contain;  /* Full image crop nahi hogi */
   }
@@ -770,6 +770,7 @@ ul.dropdown li:hover .dropdown1 {
   }
 
 }
+
 
 
 
