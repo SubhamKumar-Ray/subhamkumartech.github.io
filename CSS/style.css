@@ -132,24 +132,6 @@ ul.dropdown li:hover .dropdown1 {
     box-shadow: var(--box-shadow);
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px; 
-    font-size: 22px;
-    font-weight: 700;
-    color: #fff;
-    text-decoration: none;
-}
-
-.logo-img {
-    height: 30px;
-    width: auto;
-     width: auto;       /* width ko auto karne se image crop nahi hogi */
-    border-radius: 0;  /* remove circle so full shape visible */
-    object-fit: contain; /* ensures full logo fits without cutting */
-}
-
 .header .logo {
     font-size: 2.5rem;
     font-weight: bolder;
@@ -735,41 +717,7 @@ ul.dropdown li:hover .dropdown1 {
         width: 50vw;
     }
 } */
-@media (max-width: 768px) {
-    .logo {
-        font-size: 18px;
-        gap: 10px;
-    }
 
-    .logo-img {
-        height: 48px;
-        width: auto;
-    }
-}
-/* ========== DESKTOP VIEW ONLY (min-width: 769px) ========== */
-@media (min-width: 768px) {
-
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 28px;
-    font-weight: 700;
-    text-decoration: none;
-    color: #fff;
-  }
-
-  .logo-img {
-    height: 30px;         /* Logo bada & clear */
-    width: auto;          /* Distortion nahi hoga */
-    object-fit: contain;  /* Full image crop nahi hogi */
-  }
-
-  header {
-    padding: 15px 50px;   /* Desktop spacing */
-  }
-
-}
 
 
 
