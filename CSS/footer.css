@@ -164,8 +164,7 @@ strong{
     margin: 0 40px;
     padding: 30px;
     border: 1px solid #eee;
-   /* background-color: #15114c;*/
-   background:#FFFF00;
+    background-color: #FFFF00;
 }
 h4{
     margin-bottom: 10px;
@@ -194,10 +193,6 @@ textarea{
     margin-top: 10px;
     border-radius: 5px;
 }
-.btn-text {
-    font-size: 18px;
-    margin-left: 10px; /* Button se distance */
-    color: #333;
 #submit:hover{
     background-color: green;
 }
@@ -304,5 +299,6 @@ textarea{
       }
 
 }
+
 
 
