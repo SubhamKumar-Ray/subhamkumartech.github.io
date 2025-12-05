@@ -128,7 +128,8 @@ ul.dropdown li:hover .dropdown1 {
     /* padding:1rem 8%; */
     padding: 0 8%;
     /* background:#fff; */
-    background: yellow;
+    /*background: yellow;*/
+	background:linear-gradient(135deg, #009dff, #00f7ff);
     box-shadow: var(--box-shadow);
 }
 
@@ -717,6 +718,7 @@ ul.dropdown li:hover .dropdown1 {
         width: 50vw;
     }
 } */
+
 
 
 
