@@ -188,12 +188,16 @@ textarea{
 }
 #submit{
     border: none;
-    background-color: orangered;
+    background-color: red;
     color: white;
     width: 200px;
     margin-top: 10px;
     border-radius: 5px;
 }
+.btn-text {
+    font-size: 18px;
+    margin-left: 10px; /* Button se distance */
+    color: #333;
 #submit:hover{
     background-color: green;
 }
@@ -321,3 +325,4 @@ textarea{
       }
 
 }
+
