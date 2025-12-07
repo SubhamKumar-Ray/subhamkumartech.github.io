@@ -79,6 +79,7 @@ ul li {
     color: orange;
     font-size: 12px;
 }*/
+/* If link is empty → Coming Soon */
 /* Coming Soon */
 .dropdown a[href=""]::after,
 .dropdown1 a[href=""]::after {
@@ -111,6 +112,38 @@ ul li {
     margin-left: 6px;
 }
 
+/* Coming Soon */
+.dropdown3 a[href=""]::after {
+    content: " (Coming Soon)";
+    color: orange;
+    font-size: 12px;
+    margin-left: 6px;
+}
+
+/* Disable clicking on empty links */
+.dropdown3 a[href=""] {
+    pointer-events: none;
+    color: gray;
+}
+
+/* Fix: make ::after visible on all devices */
+.dropdown3 a {
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Green Tick if link exists */
+.dropdown3 a[href]:not([href=""])::after {
+    content: " ✓";
+    color: green;
+    font-weight: bold;
+    margin-left: 6px;
+}
+.dropdown3 li a {
+    width: 100%;
+    text-align: center;
+    justify-content: center;   /* Tick + text perfect center */
+}
 
 
 .dropdown li:hover {
@@ -758,4 +791,3 @@ ul.dropdown li:hover .dropdown1 {
         width: 50vw;
     }
 } */
-
