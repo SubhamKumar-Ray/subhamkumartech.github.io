@@ -79,7 +79,7 @@ ul li {
     color: orange;
     font-size: 12px;
 }*/
-/* If link is empty → Coming Soon */
+/* Coming Soon */
 .dropdown a[href=""]::after,
 .dropdown1 a[href=""]::after {
     content: " (Coming Soon)";
@@ -88,14 +88,21 @@ ul li {
     margin-left: 6px;
 }
 
-/* Disable click on empty links */
+/* Disable clicking on empty links */
 .dropdown a[href=""],
 .dropdown1 a[href=""] {
     pointer-events: none;
     color: gray;
 }
 
-/* If link is provided → Green Tick */
+/* FIX: Ensure ::after icons visible on mobile */
+.dropdown a,
+.dropdown1 a {
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Green Tick if link is available */
 .dropdown a[href]:not([href=""])::after,
 .dropdown1 a[href]:not([href=""])::after {
     content: " ✓";
@@ -103,6 +110,7 @@ ul li {
     font-weight: bold;
     margin-left: 6px;
 }
+
 
 
 .dropdown li:hover {
@@ -750,3 +758,4 @@ ul.dropdown li:hover .dropdown1 {
         width: 50vw;
     }
 } */
+
