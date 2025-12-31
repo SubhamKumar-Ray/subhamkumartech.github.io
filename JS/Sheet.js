@@ -1,4 +1,4 @@
-<!--const scriptURL = 'https://script.google.com/macros/s/AKfycbxFXvVTa6piVRhI8Ql0GnjFCZZmOoMCrzt6lpWQcepNNQYWw8QE6kXYE5UWBnQCcVWn/exec'
+/*const scriptURL = 'https://script.google.com/macros/s/AKfycbxFXvVTa6piVRhI8Ql0GnjFCZZmOoMCrzt6lpWQcepNNQYWw8QE6kXYE5UWBnQCcVWn/exec'
 
 const form = document.forms['contact-form']
 
@@ -9,7 +9,7 @@ form.addEventListener('submit', e => {
   .then(() => { window.location.reload(); })
   .catch(error => console.error('Error!', error.message))
 
-})-->
+})*/
 
   const scriptURL = 'https://script.google.com/macros/s/AKfycbxFXvVTa6piVRhI8Ql0GnjFCZZmOoMCrzt6lpWQcepNNQYWw8QE6kXYE5UWBnQCcVWn/exec'
 const form = document.forms['contact-form']
@@ -33,3 +33,4 @@ form.addEventListener('submit', e => {
     alert("🙏 धन्यवाद! आपका संदेश सफलतापूर्वक भेज दिया गया है।")
   })
 })
+
