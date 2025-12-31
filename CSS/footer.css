@@ -160,7 +160,7 @@ strong{
 
 /* sheet  */
 
-.msg{
+/*.msg{
     width: 50%;
     margin: 0 40px;
     padding: 30px;
@@ -195,6 +195,70 @@ textarea{
     margin-top: 10px;
     border-radius: 5px;
 }
+#submit:hover{
+    background-color: green;
+}*/
+
+/* ===== SHEET FORM STYLE ===== */
+
+.msg{
+    width: 50%;
+    margin: 0 40px;
+    padding: 30px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    background-color: #FFFF00;
+}
+
+h4{
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: green;
+}
+
+.msg p{
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: red;
+}
+
+/* Input, Select, Textarea same style */
+input,
+select,
+textarea{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Remove default select arrow issue (optional clean look) */
+select{
+    background-color: #fff;
+    cursor: pointer;
+}
+
+/* Textarea */
+textarea{
+    resize: none;
+}
+
+/* Submit button */
+#submit{
+    border: none;
+    background-color: red;
+    color: white;
+    width: 200px;
+    margin: 10px auto 0 auto;   /* 🔴 CENTER */
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    display: block;             /* 🔴 IMPORTANT */
+}
+
+
 #submit:hover{
     background-color: green;
 }
