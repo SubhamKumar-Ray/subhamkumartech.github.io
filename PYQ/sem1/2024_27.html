@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,5 +7,548 @@
 </head>
 <body>
     <embed src="https://drive.google.com/file/d/1tC0P1Sq4ZD_rvaRzj5EEyyjaAXoCeRKr/preview" width="100%" height="700px" type="">
+</body>
+</html>-->
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Payment Successful</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+<h3>Payment Successful ✅</h3>
+<p>PDF load ho raha hai...</p>
+<embed src="https://drive.google.com/file/d/1tC0P1Sq4ZD_rvaRzj5EEyyjaAXoCeRKr/preview" width="100%" height="700px">
+</body>
+</html>-->
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sem 1 (2024–27)</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+}
+
+/* ===== HEADER ===== */
+.header{
+    background:#111;
+    color:#fff;
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.header a{
+    color:#fff;
+    text-decoration:none;
+    margin-left:15px;
+}
+
+/* ===== AUTH ===== */
+#auth-container{
+    display:none;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f4f4f4;
+}
+
+.auth-box{
+    background:#fff;
+    padding:30px;
+    width:300px;
+    border-radius:8px;
+    text-align:center;
+}
+
+.auth-box input{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+}
+
+.auth-box button{
+    width:100%;
+    padding:10px;
+    cursor:pointer;
+}
+
+/* ===== PDF ===== */
+#pdf-section{
+    display:none;
+    padding:10px;
+}
+
+#printBtn{
+    padding:8px 15px;
+    margin-bottom:10px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<!--<div class="header" id="mainHeader">
+    <div>BCA Study Zone</div>
+    <div>
+        <a href="#" onclick="logout()">Logout</a>
+    </div>
+</div>
+
+<!-- LOGIN / SIGNUP -->
+<!--<div id="auth-container">
+    <div class="auth-box" id="loginBox">
+        <h2>Login</h2>
+        <input type="text" id="loginUser" placeholder="Username">
+        <input type="password" id="loginPass" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <p>New user?
+            <span style="cursor:pointer;color:blue" onclick="showSignup()">Create Account</span>
+        </p>
+    </div>
+
+    <div class="auth-box" id="signupBox" style="display:none">
+        <h2>Signup</h2>
+        <input type="text" id="signupUser" placeholder="Username">
+        <input type="password" id="signupPass" placeholder="Password">
+        <button onclick="signup()">Signup</button>
+        <p>Already user?
+            <span style="cursor:pointer;color:blue" onclick="showLogin()">Login</span>
+        </p>
+    </div>
+</div>
+
+<!-- PDF SECTION -->
+<!--<div id="pdf-section">
+    <button id="printBtn" onclick="printPDF()">Print PDF</button>
+
+    <iframe id="pdfFrame"
+        src="SEM12024-2027.pdf"
+        width="100%"
+        height="700px">
+    </iframe>
+</div>
+
+<script>
+// ===== ELEMENTS =====
+const authBox = document.getElementById("auth-container");
+const header = document.getElementById("mainHeader");
+const pdfSection = document.getElementById("pdf-section");
+const printBtn = document.getElementById("printBtn");
+
+// ===== PAGE LOAD =====
+window.onload = function(){
+    if(localStorage.getItem("isLoggedIn")==="true"){
+        showHome();
+    }else{
+        showAuth();
+    }
+};
+
+// ===== SHOW FUNCTIONS =====
+function showAuth(){
+    authBox.style.display="flex";
+    header.style.display="none";
+    pdfSection.style.display="none";
+}
+
+function showHome(){
+    authBox.style.display="none";
+    header.style.display="flex";
+    pdfSection.style.display="block";
+
+    if(localStorage.getItem("isPaid")==="true"){
+        printBtn.style.display="inline-block";
+    }else{
+        printBtn.style.display="none";
+    }
+}
+
+// ===== LOGIN =====
+function login(){
+    let u=document.getElementById("loginUser").value;
+    let p=document.getElementById("loginPass").value;
+
+    if(u && p){
+        localStorage.setItem("isLoggedIn","true");
+
+        // DEMO: paid user manually
+        // payment success ke baad ye true karna
+        // localStorage.setItem("isPaid","true");
+
+        showHome();
+    }else{
+        alert("Enter username & password");
+    }
+}
+
+// ===== SIGNUP =====
+function signup(){
+    alert("Account created. Now login.");
+    showLogin();
+}
+
+function showSignup(){
+    document.getElementById("loginBox").style.display="none";
+    document.getElementById("signupBox").style.display="block";
+}
+
+function showLogin(){
+    document.getElementById("signupBox").style.display="none";
+    document.getElementById("loginBox").style.display="block";
+}
+
+// ===== LOGOUT =====
+function logout(){
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("isPaid");
+    showAuth();
+}
+
+// ===== PRINT =====
+function printPDF(){
+    if(localStorage.getItem("isPaid")==="true"){
+        document.getElementById("pdfFrame").contentWindow.print();
+    }else{
+        alert("❌ Print only for Paid users");
+    }
+}
+
+// ===== CTRL+P BLOCK =====
+document.addEventListener("keydown",function(e){
+    if(e.ctrlKey && e.key==="p"){
+        if(localStorage.getItem("isPaid")!=="true"){
+            e.preventDefault();
+            alert("❌ Print only for Paid users");
+        }
+    }
+});
+</script>
+
+</body>
+</html>-->
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sem 1 (2024–27)</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* ================= PAYMENT ================= */
+#payment-section{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#009dff,#00f7ff);
+}
+
+.pay-box{
+    background:#fff;
+    padding:30px;
+    width:340px;
+    text-align:center;
+    border-radius:10px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.pay-box h2{
+    margin-bottom:5px;
+}
+
+.pay-box img{
+    width:220px;
+    margin:15px 0;
+    border:2px dashed #ff0000;
+    padding:10px;
+    border-radius:10px;
+}
+
+.pay-box input{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    font-size:14px;
+}
+
+.pay-box button{
+    width:100%;
+    padding:12px;
+    font-size:16px;
+    background:red;
+    color:#fff;
+    border:none;
+    cursor:pointer;
+    border-radius:6px;
+}
+
+.pay-box button:disabled{
+    background:gray;
+    cursor:not-allowed;
+}
+
+.note{
+    font-size:12px;
+    color:#444;
+    margin-top:8px;
+}
+
+/* ================= PDF ================= */
+#pdf-section{
+    display:none;
+    padding:10px;
+}
+
+iframe{
+    width:100%;
+    height:100vh;
+    border:none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= PAYMENT SECTION ================= -->
+<!--<div id="payment-section">
+    <div class="pay-box">
+        <h2>Scan & Pay ₹10</h2>
+        <p>Any UPI App</p>
+
+        <!-- 🔴 YOUR QR IMAGE -->
+        <!--<img src="qr-placeholder.png" alt="UPI QR">
+
+        <p class="note">
+            Payment करने के बाद <b>UTR / Transaction ID</b> नीचे paste करें
+        </p>
+
+        <input type="text" id="utr" placeholder="Enter 12 Digit UTR">
+
+        <button id="verifyBtn" onclick="verifyPayment()">Verify Payment</button>
+
+        <p class="note">
+            ❗ गलत UTR डालने पर access नहीं मिलेगा
+        </p>
+    </div>
+</div>
+
+<!-- ================= PDF SECTION ================= -->
+<!--<div id="pdf-section">
+    <iframe
+        id="pdfFrame"
+        src="SEM12024-2027.pdf">
+    </iframe>
+</div>
+
+<script>
+const paymentSection = document.getElementById("payment-section");
+const pdfSection = document.getElementById("pdf-section");
+const verifyBtn = document.getElementById("verifyBtn");
+
+/* Reload पर फिर QR दिखे */
+window.onload = () => {
+    sessionStorage.clear();
+};
+
+/* VERIFY PAYMENT */
+function verifyPayment(){
+    const utr = document.getElementById("utr").value.trim();
+
+    // UTR: only 12 digit numbers
+    const utrPattern = /^[0-9]{12}$/;
+
+    if(!utrPattern.test(utr)){
+        alert("❌ Invalid UTR\nPlease enter valid UTR ID");
+        return;
+    }
+
+    verifyBtn.disabled = true;
+    verifyBtn.innerText = "Verifying...";
+
+    /* Fake verification delay */
+    setTimeout(()=>{
+        sessionStorage.setItem("paidSession","true");
+        openPDF();
+    },3000);
+}
+
+/* OPEN PDF */
+function openPDF(){
+    paymentSection.style.display="none";
+    pdfSection.style.display="block";
+}
+
+/* 🚫 CTRL + P BLOCK (NO PRINT FOR ANYONE) */
+document.addEventListener("keydown",function(e){
+    if(e.ctrlKey && e.key === "p"){
+        e.preventDefault();
+        alert("❌ Printing is disabled");
+    }
+});
+</script>
+
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sem 1 (2024–27)</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:linear-gradient(135deg, #009dff, #00f7ff);
+    
+}
+
+/* PAYMENT */
+#payment{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.box{
+    background:#fff;
+    padding:30px;
+    width:330px;
+    text-align:center;
+    border-radius:8px;
+    box-shadow:0 0 8px rgba(0,0,0,.1);
+}
+.box h2{
+    margin-bottom:5px;
+}
+.box img{
+    width:220px;
+    margin:15px 0;
+}
+.box input{
+    width:100%;
+    padding:9px;
+    margin:8px 0;
+    border:1px solid #ccc;
+    border-radius:4px;
+}
+.box button{
+    width:100%;
+    padding:10px;
+    margin-top:8px;
+    background:#222;
+    color:#fff;
+    border:none;
+    border-radius:4px;
+    cursor:pointer;
+}
+.box button:disabled{
+    background:#777;
+    cursor:not-allowed;
+}
+
+/* PDF */
+#pdf{
+    display:none;
+    padding:10px;
+    background:#fff;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAYMENT -->
+<div id="payment">
+    <div class="box">
+        <h2>Scan & Pay ₹10</h2>
+        <p>Any UPI App</p>
+
+        <img src="qr-placeholder.png" alt="QR Code">
+
+        <p style="font-size:13px">
+            Payment के बाद <b>UTR / Transaction ID</b> डालें
+        </p>
+
+        <input id="utr" placeholder="UTR (12 digits)">
+        <input id="amount" placeholder="Amount (₹10)">
+        <input id="date" type="date">
+
+        <button onclick="verify()">Verify Payment</button>
+    </div>
+</div>
+
+<!-- PDF -->
+<div id="pdf">
+    <iframe
+        src="SEM12024-2027.pdf"
+        width="100%"
+        height="700px">
+    </iframe>
+</div>
+
+<script>
+window.onload = ()=>{
+    sessionStorage.clear();
+};
+
+function verify(){
+    const utr = document.getElementById("utr").value.trim();
+    const amt = document.getElementById("amount").value.trim();
+    const date = document.getElementById("date").value;
+    const btn = document.querySelector(".box button");
+
+    const utrPattern = /^[0-9]{12}$/;
+
+    if(!utrPattern.test(utr)){
+        alert("❌ Invalid UTR");
+        return;
+    }
+    if(amt !== "10"){
+        alert("❌ Amount must be ₹10");
+        return;
+    }
+    if(!date){
+        alert("❌ Select payment date");
+        return;
+    }
+
+    btn.disabled = true;
+    btn.innerText = "Verifying...";
+
+    setTimeout(()=>{
+        sessionStorage.setItem("paid","yes");
+        showPDF();
+    },2500);
+}
+
+function showPDF(){
+    document.getElementById("payment").style.display="none";
+    document.getElementById("pdf").style.display="block";
+}
+</script>
+
 </body>
 </html>
