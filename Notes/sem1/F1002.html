@@ -11,7 +11,8 @@
     <embed src="https://drive.google.com/file/d/19VtDveUr36q7hgLqcTA5zYQvjSJldske/preview" width="100%" height="700">
 </body>
 </html>-->
-<!DOCTYPE html>
+
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -21,11 +22,11 @@
 <body>
 
     <!-- PDF Preview -->
-    <embed src="https://drive.google.com/file/d/19VtDveUr36q7hgLqcTA5zYQvjSJldske/preview" 
+   <!-- <embed src="https://drive.google.com/file/d/19VtDveUr36q7hgLqcTA5zYQvjSJldske/preview" 
            width="100%" height="700">
 
     <!-- Download Button -->
-    <div style="text-align:center; margin-top:20px;">
+   <!-- <div style="text-align:center; margin-top:20px;">
         <a href="https://drive.google.com/file/d/19VtDveUr36q7hgLqcTA5zYQvjSJldske"
            download
            style="padding:12px 20px; background:#007bff; color:white; text-decoration:none; border-radius:6px;">
@@ -33,4 +34,144 @@
         </a>
     </div>
 </body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>F1002 - Basic Mathematics-I</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:linear-gradient(135deg, #009dff, #00f7ff);
+    
+}
+
+/* PAYMENT */
+#payment{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.box{
+    background:#fff;
+    padding:30px;
+    width:330px;
+    text-align:center;
+    border-radius:8px;
+    box-shadow:0 0 8px rgba(0,0,0,.1);
+}
+.box h2{
+    margin-bottom:5px;
+}
+.box img{
+    width:220px;
+    margin:15px 0;
+}
+.box input{
+    width:100%;
+    padding:9px;
+    margin:8px 0;
+    border:1px solid #ccc;
+    border-radius:4px;
+}
+.box button{
+    width:100%;
+    padding:10px;
+    margin-top:8px;
+    background:#222;
+    color:#fff;
+    border:none;
+    border-radius:4px;
+    cursor:pointer;
+}
+.box button:disabled{
+    background:#777;
+    cursor:not-allowed;
+}
+
+/* PDF */
+#pdf{
+    display:none;
+    padding:10px;
+    background:#fff;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAYMENT -->
+<div id="payment">
+    <div class="box">
+        <h2>Scan & Pay ₹10</h2>
+        <p><p>Pay using any UPI App: <b>PhonePe, Google Pay, Paytm, BHIM, etc.</b></p></p>
+
+        <img src="qr-placeholder.png" alt="QR Code">
+
+        <p style="font-size:13px">
+            Payment के बाद <b>UTR / Transaction ID</b> डालें
+        </p>
+
+        <input id="utr" placeholder="UTR ID(Number)">
+        <input id="amount" placeholder="Amount (₹10)">
+        <input id="date" type="date">
+
+        <button onclick="verify()">Verify Payment</button>
+    </div>
+</div>
+
+<!-- PDF -->
+<div id="pdf">
+    <embed src="https://drive.google.com/file/d/19VtDveUr36q7hgLqcTA5zYQvjSJldske/preview" width="100%" height="700">
+</div>
+
+<script>
+window.onload = ()=>{
+    sessionStorage.clear();
+};
+
+function verify(){
+    const utr = document.getElementById("utr").value.trim();
+    const amt = document.getElementById("amount").value.trim();
+    const date = document.getElementById("date").value;
+    const btn = document.querySelector(".box button");
+
+    const utrPattern = /^[0-9]{12}$/;
+
+    if(!utrPattern.test(utr)){
+        alert("❌ Invalid UTR");
+        return;
+    }
+    if(amt !== "10"){
+        alert("❌ Amount must be ₹10");
+        return;
+    }
+    if(!date){
+        alert("❌ Select payment date");
+        return;
+    }
+
+    btn.disabled = true;
+    btn.innerText = "Verifying...";
+
+    setTimeout(()=>{
+        sessionStorage.setItem("paid","yes");
+        showPDF();
+    },2500);
+}
+
+function showPDF(){
+    document.getElementById("payment").style.display="none";
+    document.getElementById("pdf").style.display="block";
+}
+</script>
+
+</body>
 </html>
+
