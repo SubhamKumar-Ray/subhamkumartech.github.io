@@ -1033,10 +1033,19 @@ ul.dropdown li:hover .dropdown1 {
 	color: red; /* ✅ सभी member names red */
 }
 
-.team-member p {
+/*.team-member p {
     font-size: 1.3rem;
-    color: #666;
+    color: green;
+}*/
+.name{
+    color:#00bfa5;
+    font-size:28px;
+    text-shadow:
+        1px 1px 0 #009688,
+        2px 2px 0 #00796b,
+        3px 3px 0 #004d40;
 }
+
 
 /* Contact icons */
 .contact-icon a {
