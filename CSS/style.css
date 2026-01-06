@@ -911,3 +911,144 @@ ul.dropdown li:hover .dropdown1 {
     }
 }
 
+#auth-container{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#009dff,#00f7ff);
+}
+
+.auth-box{
+    background:#fff;
+    padding:3rem;
+    width:320px;
+    border-radius:1rem;
+    box-shadow:var(--box-shadow);
+    text-align:center;
+}
+
+.auth-box input{
+    width:100%;
+    padding:1rem;
+    margin:0.8rem 0;
+    border:1px solid #ccc;
+    border-radius:0.5rem;
+}
+
+.auth-box button{
+    width:100%;
+    padding:1rem;
+    background:var(--orange);
+    color:#fff;
+    font-size:1.6rem;
+    border-radius:0.6rem;
+}
+/* ================= AUTH PAGE FIX ================= */
+.auth-page .header{
+    display: none;
+}
+.auth-page{
+    margin:0;
+    padding:0;
+}
+
+
+.team-slide {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    min-height: 500px;
+}
+
+.team-member {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+    text-align: center;
+    background: #fff;
+    padding: 4rem 2rem 2rem 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,0.2);
+}
+
+.team-member.active {
+    opacity: 1;
+    transform: translateY(0);
+    z-index: 1;
+}
+
+/* Circle Photo */
+/* Outer circle with rainbow border */
+.static-circle {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    padding: 5px; /* Rainbow border width */
+    background: conic-gradient(red, orange, yellow, green, cyan, blue, violet, red);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1rem auto; /* Center horizontally + bottom gap */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Inner circle containing the photo */
+.static-circle .photo-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden; /* photo को circle में clip करता है */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* ऊपर से photo align */
+    background-color: white; /* gap साफ दिखे */
+}
+
+.static-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* photo full cover */
+    object-position: center top; /* face ऊपर से दिखे */
+    border-radius: 50%;
+    transform: scale(1.05); /* photo circle में perfect fit */
+}
+
+
+.static-circle:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.4), inset 0 -6px 12px rgba(0,0,0,0.25);
+}
+
+.team-member h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+	color: red; /* ✅ सभी member names red */
+}
+
+.team-member p {
+    font-size: 1.3rem;
+    color: #666;
+}
+
+/* Contact icons */
+.contact-icon a {
+    margin: 0 5px;
+    font-size: 1.5rem;
+    color: #333;
+    transition: 0.3s;
+}
+
+.contact-icon a:hover {
+    color: red;
+}
+
+/* Responsive */
+@media(max-width:991px){
+    .static-circle { width: 150px; height: 150px; }
+}
