@@ -30,6 +30,79 @@ form.addEventListener('submit', e => {
     alert("🙏 धन्यवाद! आपका संदेश सफलतापूर्वक भेज दिया गया है।")
   })
 })
+/* if (performance.navigation.type === 1) {
+        const screen = document.getElementById("refreshScreen");
+        screen.classList.add("show");
+
+        setTimeout(() => {
+            screen.classList.remove("show");
+        }, 2000); // 2 second baad under page dikhega
+    }
+*/
+let count = 1;
+let progressCircle = document.getElementById("progress");
+let counter = document.getElementById("count");
+let loader = document.getElementById("loader");
+let mainPage = document.getElementById("mainPage");
+
+let radius = 70;
+let circumference = 2 * Math.PI * radius;
+
+progressCircle.style.strokeDasharray = circumference;
+progressCircle.style.strokeDashoffset = circumference;
+
+let interval = setInterval(() => {
+
+    counter.innerText = count + "%";
+
+    let offset = circumference - (count / 100) * circumference;
+    progressCircle.style.strokeDashoffset = offset;
+
+    count++;
+
+    if (count > 100) {
+        clearInterval(interval);
+
+        // ✅ Loader hide
+        loader.style.display = "none";
+
+        // ✅ POPUP show (speech ke liye)
+        document.getElementById("voicePopup").style.display = "flex";
+    }
+
+}, 30);
 
 
 
+// 🔊 English (Indian Accent)
+function speakEnglishIndian(){
+
+    window.speechSynthesis.cancel();
+
+    const msg = new SpeechSynthesisUtterance(
+        "This website has been created by Subham Kumar Ray. The page has been successfully loaded."
+    );
+
+    msg.lang = "en-IN";
+    msg.rate = 0.95;
+    msg.pitch = 1;
+    msg.volume = 1;
+
+    const voices = speechSynthesis.getVoices();
+    const indianVoice = voices.find(v => v.lang === "en-IN");
+    if (indianVoice) {
+        msg.voice = indianVoice;
+    }
+
+    speechSynthesis.speak(msg);
+}
+
+
+// 🔥 Button click (MOBILE FRIENDLY)
+function handleEnglishVoiceAndOpen(){
+
+    speakEnglishIndian();   // 🔊 बोलेगा
+
+    document.getElementById("voicePopup").style.display = "none";
+    mainPage.style.display = "block";
+}
