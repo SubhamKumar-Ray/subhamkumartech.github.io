@@ -247,7 +247,7 @@ ul.dropdown li:hover .dropdown1 {
 }
 
 #menu-btn {
-    display: none;
+    display: inline-block;
 }
 
 .header .search-form {
